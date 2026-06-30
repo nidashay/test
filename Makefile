@@ -6,11 +6,12 @@ CFLAGS ?= -Wall -O2 $(LIBS)
 default:
 	@echo "[ OK ] Compiling server code..."
 	@sleep 3
-	@$(CC) server.c -o $(output_file) $(CFLAGS)
+	@mkdir -p bin/
+	@$(CC) server.c -o bin/$(output_file) $(CFLAGS)
 	@echo "[ OK ] Done. Generated file [ $(output_file) ]"
 
 clean:
 	@echo "[ OK ] Cleaning..."
 	@sleep 3
-	@rm -f *.o $(output_file) 
+	@rm -rf *.o bin/
 	@echo "[ OK ] Done..."
